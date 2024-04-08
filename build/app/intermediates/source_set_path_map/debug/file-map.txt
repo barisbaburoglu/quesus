@@ -1,0 +1,14 @@
+com.quesus.app-jetified-window-java-1.0.0-beta04-0 C:\Users\Baris\.gradle\caches\transforms-3\006d93cd422dbc43e89591147c2de572\transformed\jetified-window-java-1.0.0-beta04\res
+com.quesus.app-core-1.6.0-1 C:\Users\Baris\.gradle\caches\transforms-3\4ca28c4a71705f8a687c69dda140a277\transformed\core-1.6.0\res
+com.quesus.app-jetified-annotation-experimental-1.1.0-2 C:\Users\Baris\.gradle\caches\transforms-3\8965c941cf4bee4d72541b965c7c9d39\transformed\jetified-annotation-experimental-1.1.0\res
+com.quesus.app-jetified-window-1.0.0-beta04-3 C:\Users\Baris\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\res
+com.quesus.app-debug-4 C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\debug\res
+com.quesus.app-main-5 C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\res
+com.quesus.app-pngs-6 C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\build\app\generated\res\pngs\debug
+com.quesus.app-resValues-7 C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\build\app\generated\res\resValues\debug
+com.quesus.app-rs-8 C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\build\app\generated\res\rs\debug
+com.quesus.app-mergeDebugResources-9 C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.quesus.app-mergeDebugResources-10 C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.quesus.app-merged_res-11 C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\build\app\intermediates\merged_res\debug
+com.quesus.app-packaged_res-12 C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\build\connectivity_plus\intermediates\packaged_res\debug
+com.quesus.app-packaged_res-13 C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\build\path_provider_android\intermediates\packaged_res\debug
