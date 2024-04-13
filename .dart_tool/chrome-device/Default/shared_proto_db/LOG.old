@@ -1,8 +1,13 @@
-2024/04/09-01:04:05.817 3388 Reusing MANIFEST C:\Users\Baris\AppData\Local\Temp\flutter_tools.78d4dea1\flutter_tools_chrome_device.f789bbb7\Default\shared_proto_db/MANIFEST-000001
-2024/04/09-01:04:05.818 3388 Recovering log #16
-2024/04/09-01:04:05.819 3388 Reusing old log C:\Users\Baris\AppData\Local\Temp\flutter_tools.78d4dea1\flutter_tools_chrome_device.f789bbb7\Default\shared_proto_db/000016.log 
-2024/04/09-01:04:05.820 3388 Delete type=0 #3
-2024/04/09-01:04:05.820 3388 Delete type=0 #4
-2024/04/09-01:04:05.820 3388 Delete type=0 #7
-2024/04/09-01:04:05.820 3388 Delete type=0 #10
-2024/04/09-01:04:05.820 3388 Delete type=0 #13
+2024/04/13-19:46:07.457 73b0 Reusing MANIFEST C:\Users\Baris\AppData\Local\Temp\flutter_tools.ff4577a5\flutter_tools_chrome_device.4927f6a\Default\shared_proto_db/MANIFEST-000001
+2024/04/13-19:46:07.458 73b0 Recovering log #19
+2024/04/13-19:46:07.460 73b0 Reusing old log C:\Users\Baris\AppData\Local\Temp\flutter_tools.ff4577a5\flutter_tools_chrome_device.4927f6a\Default\shared_proto_db/000019.log 
+2024/04/13-19:46:07.461 73b0 Delete type=0 #3
+2024/04/13-19:46:07.461 73b0 Delete type=0 #4
+2024/04/13-19:46:07.461 73b0 Delete type=0 #7
+2024/04/13-19:46:07.461 73b0 Delete type=2 #8
+2024/04/13-19:46:07.461 73b0 Delete type=0 #10
+2024/04/13-19:46:07.461 73b0 Delete type=2 #11
+2024/04/13-19:46:07.461 73b0 Delete type=0 #13
+2024/04/13-19:46:07.461 73b0 Delete type=2 #14
+2024/04/13-19:46:07.462 73b0 Delete type=0 #16
+2024/04/13-19:46:07.462 73b0 Delete type=2 #17

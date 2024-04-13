@@ -42,20 +42,6 @@ class MyApp extends StatelessWidget {
         '/results': (context) => const ResultPage(point: 0, maxPoint: 0),
         '/questions': (context) => const QuestionsPage(),
         '/users': (context) => const UsersPage(),
-        // '/menu': (context) => const Menu(),
-        // '/permission': (context) => const PermissionPage(),
-        // '/qrcapture': (context) => QRCaptureView(
-        //       gecisKontrolModel: PersonelGecisKontrolModel(
-        //         firmaId: 0,
-        //         foto: "",
-        //         map: "",
-        //         modulKey: "",
-        //         personelId: 0,
-        //         quarKod: "",
-        //       ),
-        //     ),
-        // '/imagecapture': (context) =>
-        //     const ImageCapture(lostDataImageFile: null),
       },
     );
   }

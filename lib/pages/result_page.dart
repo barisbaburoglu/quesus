@@ -3,11 +3,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:quesus/pages/signin_page.dart';
+import 'package:quesus/widgets/app_bar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../constants/colors.dart';
 import '../constants/dimensions.dart';
 import '../constants/secret.dart';
+import '../widgets/drawer.dart';
 
 class ResultPage extends StatefulWidget {
   final int point;
@@ -48,6 +50,16 @@ class _ResultPageState extends State<ResultPage> with TickerProviderStateMixin {
               builder: (context) => const SignIn(),
             ),
             (route) => false);
+      } else {
+        if (widget.maxPoint == 0) {
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            '/description',
+            ModalRoute.withName('/description'),
+          );
+        } else {
+          percent = (((widget.point + widget.maxPoint) / 2) / widget.maxPoint);
+        }
       }
     });
   }
@@ -58,8 +70,6 @@ class _ResultPageState extends State<ResultPage> with TickerProviderStateMixin {
     _loadingUser = true;
 
     var checkUser = getUser();
-
-    percent = (((widget.point + widget.maxPoint) / 2) / widget.maxPoint);
   }
 
   @override
@@ -77,37 +87,8 @@ class _ResultPageState extends State<ResultPage> with TickerProviderStateMixin {
           )
         : Scaffold(
             backgroundColor: colorBackground,
-            appBar: AppBar(
-              title: Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                      child: Center(
-                        child: Text(
-                          "QueSus",
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                    InkWell(
-                      mouseCursor: SystemMouseCursors.click,
-                      onTap: () {},
-                      child: Text(
-                        "Çıkış",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              backgroundColor: colorGreenPrimary,
-              foregroundColor: Colors.white,
-            ),
+            appBar: const QueSusAppBar(),
+            drawer: const QueSusDrawer(),
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,

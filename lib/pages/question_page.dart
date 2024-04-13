@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../constants/secret.dart';
 import '../helper/api.dart';
 import '../models/shuffle_answer.dart';
+import '../widgets/app_bar.dart';
 import '../widgets/question_view.dart';
 import 'signin_page.dart';
 
@@ -74,28 +75,7 @@ class _QuestionPageState extends State<QuestionPage> {
           )
         : Scaffold(
             backgroundColor: colorBackground,
-            appBar: AppBar(
-                automaticallyImplyLeading: false,
-                backgroundColor: colorGreenPrimary,
-                centerTitle: true,
-                title: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/icon.png',
-                      width: 40.0,
-                      height: 40.0,
-                    ),
-                    Flexible(
-                      child: Text(
-                        widget.title,
-                        maxLines: 2,
-                        softWrap: true,
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ],
-                )),
+            appBar: const QueSusAppBar(),
             body: _futureWidget(),
           );
   }

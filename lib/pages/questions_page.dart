@@ -12,6 +12,8 @@ import '../constants/colors.dart';
 import '../constants/dimensions.dart';
 import '../constants/secret.dart';
 import '../models/question.dart';
+import '../widgets/app_bar.dart';
+import '../widgets/drawer.dart';
 import '../widgets/input_edit.dart';
 import '../widgets/question_tile.dart';
 
@@ -149,148 +151,8 @@ class _QuestionsPageState extends State<QuestionsPage>
           )
         : Scaffold(
             backgroundColor: colorBackground,
-            appBar: AppBar(
-              title: Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                        child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/icon.png',
-                          width: 40.0,
-                          height: 40.0,
-                        ),
-                        Flexible(
-                          child: Text(
-                            "QueSus",
-                            style: GoogleFonts.montserrat(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            maxLines: 1,
-                            softWrap: true,
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ],
-                    )),
-                    Row(
-                      children: [
-                        InkWell(
-                          mouseCursor: SystemMouseCursors.click,
-                          onTap: () async {
-                            SharedPreferences pref =
-                                await SharedPreferences.getInstance();
-                            pref.clear();
-                            var s = await getUser();
-                          },
-                          child: Row(
-                            children: [
-                              Text(
-                                "Çıkış",
-                                style: GoogleFonts.montserrat(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              const SizedBox(
-                                width: 5,
-                              ),
-                              const Icon(
-                                FontAwesomeIcons.powerOff,
-                                size: 20,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              backgroundColor: colorGreenPrimary,
-              foregroundColor: Colors.white,
-            ),
-            drawer: userSession.isAdmin == 1
-                ? Drawer(
-                    // Sol menü
-                    child: ListView(
-                      padding: EdgeInsets.zero,
-                      children: <Widget>[
-                        SizedBox(
-                          height: 50,
-                        ),
-                        ListTile(
-                          leading: Icon(FontAwesomeIcons.house),
-                          title: Text(
-                            'QueSus',
-                            style: GoogleFonts.montserrat(
-                              color: colorGreenPrimary,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          iconColor: colorGreenPrimary,
-                          onTap: () {
-                            Navigator.pushReplacementNamed(
-                                context, '/description');
-                          },
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 15,
-                            vertical: 5,
-                          ),
-                          child: Divider(
-                            color: colorGreenSecondary,
-                            height: 2,
-                          ),
-                        ),
-                        ListTile(
-                          leading: Icon(FontAwesomeIcons.question),
-                          title: Text(
-                            'Soru İşlemleri',
-                            style: GoogleFonts.montserrat(
-                              color: colorGreenPrimary,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          iconColor: colorGreenPrimary,
-                          onTap: () {
-                            Navigator.pushNamedAndRemoveUntil(
-                                context, "/questions", (route) => false);
-                          },
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 15,
-                            vertical: 5,
-                          ),
-                          child: Divider(
-                            color: colorGreenSecondary,
-                            height: 2,
-                          ),
-                        ),
-                        ListTile(
-                          leading: Icon(FontAwesomeIcons.person),
-                          title: Text(
-                            'Kullanıcı İşlemleri',
-                            style: GoogleFonts.montserrat(
-                              color: colorGreenPrimary,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          iconColor: colorGreenPrimary,
-                          onTap: () {
-                            Navigator.pushReplacementNamed(context, '/users');
-                          },
-                        ),
-                      ],
-                    ),
-                  )
-                : null,
+            appBar: const QueSusAppBar(),
+            drawer: const QueSusDrawer(),
             body: Center(
               child: Padding(
                 padding: EdgeInsets.symmetric(

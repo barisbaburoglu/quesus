@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:developer';
-
 // ignore: depend_on_referenced_packages
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -14,7 +13,7 @@ import '../models/user.dart';
 class ApiQueSus {
   Future<User> login(User user) async {
     final response = await http.post(
-      Uri.parse('$api/questions/login'),
+      Uri.parse('$api/Questions/Login'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -193,7 +192,7 @@ class ApiQueSus {
 
     if (response.statusCode == 200) {
       try {
-        log('api worked ${response.body}');
+        //log('api worked ${response.body}');
         var body = response.body;
         var statesJsonArray = json.decode(body.toString());
 
@@ -215,7 +214,7 @@ class ApiQueSus {
   Future<bool> updateBank(Bank bank) async {
     var json = jsonEncode(bank.toJson());
     final response = await http.put(
-      Uri.parse('$api/questions/updatebank'),
+      Uri.parse('$api/Questions/UpdateBank'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },

@@ -189,14 +189,14 @@ class _SignUpState extends State<SignUp> with SingleTickerProviderStateMixin {
         child: Scaffold(
           backgroundColor: colorBackground,
           appBar: AppBar(
-            title: const Text(
+            title: Text(
               "Giriş Yap",
               style: TextStyle(
-                color: Colors.white,
+                color: colorGreenPrimary,
               ),
             ),
-            backgroundColor: colorGreenPrimary,
-            foregroundColor: Colors.white,
+            backgroundColor: colorAppBar,
+            foregroundColor: colorGreenPrimary,
             leading: BackButton(
               onPressed: () {
                 Navigator.pop(context);
