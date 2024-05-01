@@ -311,7 +311,7 @@ class _UserTileState extends State<UserTile> {
                         children: [
                           SizedBox(
                             width: calculatedWidth(250, context),
-                            height: calculatedHeight(650, context),
+                            height: calculatedHeight(618, context),
                             child: Center(
                               child: SingleChildScrollView(
                                 padding: EdgeInsets.only(

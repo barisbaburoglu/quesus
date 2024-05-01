@@ -1,4 +1,4 @@
-#Mon Apr 29 08:44:54 TRT 2024
-base.0=C\:\\Users\\Baris\\Desktop\\MyProjects\\devinsoft\\MeryemGecimli\\quesus\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Thu May 02 00:19:06 TRT 2024
+base.0=C\:\\Users\\Ecem\\Documents\\vsprojects\\quesus\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

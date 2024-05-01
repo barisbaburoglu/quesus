@@ -67,7 +67,7 @@ class _ReportRowsState extends State<ReportRows> {
                   ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width -
-                        calculatedWidth(75, context),
+                        calculatedWidth(90, context),
                     child: Text(
                       "${report.question}",
                       style: GoogleFonts.montserrat(
@@ -81,63 +81,70 @@ class _ReportRowsState extends State<ReportRows> {
                   ),
                 ],
               ),
-              subtitle: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    'Verilen Cevap: ',
-                    style: GoogleFonts.montserrat(
-                        fontSize: 10,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.black),
-                    maxLines: 1,
-                    softWrap: true,
-                    textAlign: TextAlign.left,
-                  ),
-                  Text(
-                    '${report.choice}',
-                    style: GoogleFonts.montserrat(
-                        fontSize: 10,
-                        fontWeight: FontWeight.bold,
-                        color: report.score == 1 ? colorGreenLight : colorRed),
-                    maxLines: 1,
-                    softWrap: true,
-                    textAlign: TextAlign.left,
-                  ),
-                  SizedBox(
-                    width: calculatedWidth(5, context),
-                  ),
-                  SizedBox(
-                    height: 10,
-                    child: VerticalDivider(
-                      color: colorGreenPrimary,
-                      width: 2,
+              subtitle: Padding(
+                padding: const EdgeInsets.only(top: 8),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Verilen Cevap: ',
+                      style: GoogleFonts.montserrat(
+                          fontSize: 10,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.black),
+                      maxLines: 1,
+                      softWrap: true,
+                      textAlign: TextAlign.left,
                     ),
-                  ),
-                  SizedBox(
-                    width: calculatedWidth(5, context),
-                  ),
-                  Text(
-                    'Puan: ',
-                    style: GoogleFonts.montserrat(
-                        fontSize: 10,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.black),
-                    maxLines: 1,
-                    softWrap: true,
-                    textAlign: TextAlign.left,
-                  ),
-                  Text(
-                    '${report.score}',
-                    style: GoogleFonts.montserrat(
-                        fontSize: 10,
-                        fontWeight: FontWeight.bold,
-                        color: report.score == 1 ? colorGreenLight : colorRed),
-                    maxLines: 1,
-                    softWrap: true,
-                    textAlign: TextAlign.left,
-                  ),
-                ],
+                    SizedBox(
+                      width: 150,
+                      child: Text(
+                        '${report.choice}',
+                        style: GoogleFonts.montserrat(
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold,
+                            color: report.score == 1 ? colorGreenLight : colorRed),
+                        maxLines: 2,
+                        softWrap: true,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.left,
+                      ),
+                    ),
+                    SizedBox(
+                      width: calculatedWidth(5, context),
+                    ),
+                    SizedBox(
+                      height: 10,
+                      child: VerticalDivider(
+                        color: colorGreenPrimary,
+                        width: 2,
+                      ),
+                    ),
+                    SizedBox(
+                      width: calculatedWidth(5, context),
+                    ),
+                    Text(
+                      'Puan: ',
+                      style: GoogleFonts.montserrat(
+                          fontSize: 10,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.black),
+                      maxLines: 1,
+                      softWrap: true,
+                      textAlign: TextAlign.left,
+                    ),
+                    Text(
+                      '${report.score}',
+                      style: GoogleFonts.montserrat(
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                          color: report.score == 1 ? colorGreenLight : colorRed),
+                      maxLines: 1,
+                      softWrap: true,
+                      textAlign: TextAlign.left,
+                    ),
+                  ],
+                ),
               ),
             );
           }).toList(),

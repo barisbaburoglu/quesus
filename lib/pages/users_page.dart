@@ -234,7 +234,7 @@ class _UsersPageState extends State<UsersPage> with TickerProviderStateMixin {
                                                 width: calculatedWidth(
                                                     250, context),
                                                 height: calculatedHeight(
-                                                    650, context),
+                                                    618, context),
                                                 child: Center(
                                                   child: SingleChildScrollView(
                                                     padding: EdgeInsets.only(

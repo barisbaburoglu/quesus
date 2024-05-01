@@ -153,7 +153,7 @@ class _QuestionTileState extends State<QuestionTile> {
             ),
             SizedBox(
               height: calculatedHeight(80, context),
-              width: calculatedWidth(250, context),
+              width: calculatedWidth(210, context),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -271,7 +271,7 @@ class _QuestionTileState extends State<QuestionTile> {
                         children: [
                           SizedBox(
                             width: calculatedWidth(250, context),
-                            height: calculatedHeight(650, context),
+                            height: calculatedHeight(618, context),
                             child: Center(
                               child: SingleChildScrollView(
                                 padding: EdgeInsets.only(

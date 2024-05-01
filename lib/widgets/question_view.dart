@@ -36,6 +36,8 @@ class _QuestionsPageViewState extends State<QuestionsPageView> {
 
   int _totalScore = 0;
 
+  bool sendingAnswers = false;
+
   @override
   void initState() {
     super.initState();
@@ -86,7 +88,8 @@ class _QuestionsPageViewState extends State<QuestionsPageView> {
                     ),
                   ),
                 ),
-                actions: [
+                
+                actions:  [
                   Center(
                     child: MaterialButton(
                       color: colorGreenLight,
@@ -107,7 +110,7 @@ class _QuestionsPageViewState extends State<QuestionsPageView> {
                       ),
                     ),
                   )
-                ],
+                ] ,
               ),
             ));
   }
@@ -121,102 +124,113 @@ class _QuestionsPageViewState extends State<QuestionsPageView> {
               onWillPop: () async {
                 return false; // Geri tuşuna basıldığında işlem yapma
               },
-              child: AlertDialog(
-                backgroundColor: colorBackground,
-                title: Icon(
-                  score == 1
-                      ? FontAwesomeIcons.circleCheck
-                      : FontAwesomeIcons.circleXmark,
-                  color: score == 1 ? colorGreenLight : colorRed,
-                  size: 50,
-                ),
-                content: SizedBox(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Text(
-                            score == 1
-                                ? "Doğru Cevap \n\n +1"
-                                : "Yanlış Cevap \n\n -1",
-                            style: GoogleFonts.montserrat(
-                              color: score == 1 ? colorGreenPrimary : colorRed,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            textAlign: TextAlign.center,
-                            textScaleFactor: 1),
-                        const SizedBox(
-                          height: 25,
-                        ),
-                        Text("Puan : $puan",
-                            style: GoogleFonts.montserrat(
-                              color: score == 1 ? colorGreenPrimary : colorRed,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            textAlign: TextAlign.center,
-                            textScaleFactor: 1),
-                      ],
+              child:  StatefulBuilder(
+                                    builder: (context, setState) {
+                  return AlertDialog(
+                    backgroundColor: colorBackground,
+                    title: Icon(
+                      score == 1
+                          ? FontAwesomeIcons.circleCheck
+                          : FontAwesomeIcons.circleXmark,
+                      color: score == 1 ? colorGreenLight : colorRed,
+                      size: 50,
                     ),
-                  ),
-                ),
-                actions: [
-                  index + 1 == widget.results.length
-                      ? Center(
-                          child: MaterialButton(
-                            color: colorGreenLight,
-                            onPressed: () async {
-                              String uniqKey = const Uuid().v1();
-                              for (var answer in _userAnswerList) {
-                                var s = await ApiQueSus().createAnswer(Answer(
-                                    uniqKey: uniqKey,
-                                    optionId: answer.id,
-                                    userId: userSession.id));
-                              }
+                    content: SizedBox(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Text(
+                                score == 1
+                                    ? "Doğru Cevap \n\n +1"
+                                    : "Yanlış Cevap \n\n -1",
+                                style: GoogleFonts.montserrat(
+                                  color: score == 1 ? colorGreenPrimary : colorRed,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.center,
+                                textScaleFactor: 1),
+                            const SizedBox(
+                              height: 25,
+                            ),
+                            Text("Puan : $puan",
+                                style: GoogleFonts.montserrat(
+                                  color: score == 1 ? colorGreenPrimary : colorRed,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.center,
+                                textScaleFactor: 1),
+                          ],
+                        ),
+                      ),
+                    ),
+                    actions: [
+                      index + 1 == widget.results.length
+                          ? Center(
+                              child: MaterialButton(
+                                color: colorGreenLight,
+                                onPressed: () async {
+                                  if(!sendingAnswers){
+                                    
+                                    setState(() {
+                                      sendingAnswers = true;
+                                    });
+                                    String uniqKey = const Uuid().v1();
+                                    for (var answer in _userAnswerList) {
+                                      var s = await ApiQueSus().createAnswer(Answer(
+                                          uniqKey: uniqKey,
+                                          optionId: answer.id,
+                                          userId: userSession.id));
+                                    }
 
-                              Navigator.of(context).pushAndRemoveUntil(
-                                  MaterialPageRoute(
-                                    builder: (context) => ResultPage(
-                                        point: _totalScore,
-                                        maxPoint: widget.results.length),
+                                    Navigator.of(context).pushAndRemoveUntil(
+                                        MaterialPageRoute(
+                                          builder: (context) => ResultPage(
+                                              point: _totalScore,
+                                              maxPoint: widget.results.length),
+                                        ),
+                                        (route) => false);
+                                  }
+                                  
+                                },
+                                child: Text(
+                                  !sendingAnswers ? "Bitir ve Sonucu Gör" : "Cevaplar Gönderiliyor..",
+                                  style: GoogleFonts.montserrat(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
                                   ),
-                                  (route) => false);
-                            },
-                            child: Text(
-                              "Sonucu Gör",
-                              style: GoogleFonts.montserrat(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                        )
-                      : Center(
-                          child: MaterialButton(
-                            color: colorGreenLight,
-                            onPressed: () {
-                              Navigator.pop(context);
+                            )
+                          : Center(
+                              child: MaterialButton(
+                                color: colorGreenLight,
+                                onPressed: () {
+                                  Navigator.pop(context);
 
-                              showCustomOkDialog(
-                                  context,
-                                  widget.results.elementAt(index + 1).keywords,
-                                  "Tamam");
-                            },
-                            child: Text(
-                              "Sonraki Soru",
-                              style: GoogleFonts.montserrat(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
+                                  showCustomOkDialog(
+                                      context,
+                                      widget.results.elementAt(index + 1).keywords,
+                                      "Tamam");
+                                },
+                                child: Text(
+                                  "Sonraki Soru",
+                                  style: GoogleFonts.montserrat(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                        )
-                ],
+                            )
+                    ],
+                  );
+                }
               ),
             ));
   }

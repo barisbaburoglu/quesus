@@ -88,7 +88,7 @@ class _ResultPageState extends State<ResultPage> with TickerProviderStateMixin {
         : Scaffold(
             backgroundColor: colorBackground,
             appBar: const QueSusAppBar(),
-            drawer: const QueSusDrawer(),
+            drawer: userSession.isAdmin == 1 ? const QueSusDrawer() : null,
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
