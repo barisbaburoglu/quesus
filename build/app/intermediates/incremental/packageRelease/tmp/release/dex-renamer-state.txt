@@ -1,4 +1,4 @@
-#Tue Apr 02 16:57:01 TRT 2024
-base.0=C\:\\Users\\Baris\\Desktop\\MyProjects\\devinsoft\\MeryemGecimli\\quesus\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+#Thu May 02 01:10:00 TRT 2024
+base.0=C\:\\Users\\Ecem\\Documents\\vsprojects\\quesus\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

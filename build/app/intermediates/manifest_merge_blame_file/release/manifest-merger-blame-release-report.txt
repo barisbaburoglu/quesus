@@ -6,93 +6,144 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="16"
-8-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml
+8-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="33" />
-9-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml
+9-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:3:5-66
-11-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:3:22-64
+11-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:3:5-66
+11-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:3:22-64
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:4:5-79
-12-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:4:22-76
+12-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:4:5-79
+12-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:4:22-76
 13    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-13-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:5:5-79
-13-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:5:22-76
+13-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:5:5-79
+13-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:5:22-76
 14
-15    <application
-16        android:name="android.app.Application"
-16-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:8:9-42
-17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-17-->[androidx.core:core:1.6.0] C:\Users\Baris\.gradle\caches\transforms-3\4ca28c4a71705f8a687c69dda140a277\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
-18        android:icon="@mipmap/launcher_icon"
-18-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:9:9-45
-19        android:label="QueSus" >
-19-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:7:9-31
-20        <activity
-20-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:10:9-30:20
-21            android:name="com.quesus.app.MainActivity"
-21-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:11:13-41
-22            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-22-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:15:13-163
-23            android:exported="true"
-23-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:12:13-36
-24            android:hardwareAccelerated="true"
-24-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:16:13-47
-25            android:launchMode="singleTop"
-25-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:13:13-43
-26            android:theme="@style/LaunchTheme"
-26-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:14:13-47
-27            android:windowSoftInputMode="adjustResize" >
-27-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:17:13-55
-28
-29            <!--
-30                 Specifies an Android theme to apply to this Activity as soon as
-31                 the Android process has started. This theme is visible to the user
-32                 while the Flutter UI initializes. After that, this theme continues
-33                 to determine the Window background behind the Flutter UI.
-34            -->
-35            <meta-data
-35-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:22:13-25:17
-36                android:name="io.flutter.embedding.android.NormalTheme"
-36-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:23:15-70
-37                android:resource="@style/NormalTheme" />
-37-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:24:15-52
-38
-39            <intent-filter>
-39-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:26:13-29:29
-40                <action android:name="android.intent.action.MAIN" />
-40-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:27:17-68
-40-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:27:25-66
-41
-42                <category android:name="android.intent.category.LAUNCHER" />
-42-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:28:17-76
-42-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:28:27-74
-43            </intent-filter>
-44        </activity>
-45        <!--
-46             Don't delete the meta-data below.
-47             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-48        -->
-49        <meta-data
-49-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:33:9-35:33
-50            android:name="flutterEmbedding"
-50-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:34:13-44
-51            android:value="2" />
-51-->C:\Users\Baris\Desktop\MyProjects\devinsoft\MeryemGecimli\quesus\android\app\src\main\AndroidManifest.xml:35:13-30
-52
-53        <uses-library
-53-->[androidx.window:window:1.0.0-beta04] C:\Users\Baris\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
-54            android:name="androidx.window.extensions"
-54-->[androidx.window:window:1.0.0-beta04] C:\Users\Baris\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
-55            android:required="false" />
-55-->[androidx.window:window:1.0.0-beta04] C:\Users\Baris\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
-56        <uses-library
-56-->[androidx.window:window:1.0.0-beta04] C:\Users\Baris\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
-57            android:name="androidx.window.sidecar"
-57-->[androidx.window:window:1.0.0-beta04] C:\Users\Baris\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
-58            android:required="false" />
-58-->[androidx.window:window:1.0.0-beta04] C:\Users\Baris\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
-59    </application>
-60
-61</manifest>
+15    <permission
+15-->[androidx.core:core:1.9.0] C:\Users\Ecem\.gradle\caches\transforms-3\5f80b20db3afa86c72a9766b008d752d\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+16        android:name="com.quesus.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+16-->[androidx.core:core:1.9.0] C:\Users\Ecem\.gradle\caches\transforms-3\5f80b20db3afa86c72a9766b008d752d\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+17        android:protectionLevel="signature" />
+17-->[androidx.core:core:1.9.0] C:\Users\Ecem\.gradle\caches\transforms-3\5f80b20db3afa86c72a9766b008d752d\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+18
+19    <uses-permission android:name="com.quesus.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+19-->[androidx.core:core:1.9.0] C:\Users\Ecem\.gradle\caches\transforms-3\5f80b20db3afa86c72a9766b008d752d\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+19-->[androidx.core:core:1.9.0] C:\Users\Ecem\.gradle\caches\transforms-3\5f80b20db3afa86c72a9766b008d752d\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+20
+21    <application
+22        android:name="android.app.Application"
+22-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:8:9-42
+23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+23-->[androidx.core:core:1.9.0] C:\Users\Ecem\.gradle\caches\transforms-3\5f80b20db3afa86c72a9766b008d752d\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+24        android:icon="@mipmap/launcher_icon"
+24-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:9:9-45
+25        android:label="QueSus" >
+25-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:7:9-31
+26        <activity
+26-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:10:9-30:20
+27            android:name="com.quesus.app.MainActivity"
+27-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:11:13-41
+28            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+28-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:15:13-163
+29            android:exported="true"
+29-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:12:13-36
+30            android:hardwareAccelerated="true"
+30-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:16:13-47
+31            android:launchMode="singleTop"
+31-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:13:13-43
+32            android:theme="@style/LaunchTheme"
+32-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:14:13-47
+33            android:windowSoftInputMode="adjustResize" >
+33-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:17:13-55
+34
+35            <!--
+36                 Specifies an Android theme to apply to this Activity as soon as
+37                 the Android process has started. This theme is visible to the user
+38                 while the Flutter UI initializes. After that, this theme continues
+39                 to determine the Window background behind the Flutter UI.
+40            -->
+41            <meta-data
+41-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:22:13-25:17
+42                android:name="io.flutter.embedding.android.NormalTheme"
+42-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:23:15-70
+43                android:resource="@style/NormalTheme" />
+43-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:24:15-52
+44
+45            <intent-filter>
+45-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:26:13-29:29
+46                <action android:name="android.intent.action.MAIN" />
+46-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:27:17-68
+46-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:27:25-66
+47
+48                <category android:name="android.intent.category.LAUNCHER" />
+48-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:28:17-76
+48-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:28:27-74
+49            </intent-filter>
+50        </activity>
+51        <!--
+52             Don't delete the meta-data below.
+53             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+54        -->
+55        <meta-data
+55-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:33:9-35:33
+56            android:name="flutterEmbedding"
+56-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:34:13-44
+57            android:value="2" />
+57-->C:\Users\Ecem\Documents\vsprojects\quesus\android\app\src\main\AndroidManifest.xml:35:13-30
+58
+59        <provider
+59-->[:open_file] C:\Users\Ecem\Documents\vsprojects\quesus\build\open_file\intermediates\merged_manifest\release\AndroidManifest.xml:11:9-20:20
+60            android:name="com.crazecoder.openfile.FileProvider"
+60-->[:open_file] C:\Users\Ecem\Documents\vsprojects\quesus\build\open_file\intermediates\merged_manifest\release\AndroidManifest.xml:12:13-64
+61            android:authorities="com.quesus.app.fileProvider.com.crazecoder.openfile"
+61-->[:open_file] C:\Users\Ecem\Documents\vsprojects\quesus\build\open_file\intermediates\merged_manifest\release\AndroidManifest.xml:13:13-88
+62            android:exported="false"
+62-->[:open_file] C:\Users\Ecem\Documents\vsprojects\quesus\build\open_file\intermediates\merged_manifest\release\AndroidManifest.xml:14:13-37
+63            android:grantUriPermissions="true" >
+63-->[:open_file] C:\Users\Ecem\Documents\vsprojects\quesus\build\open_file\intermediates\merged_manifest\release\AndroidManifest.xml:15:13-47
+64            <meta-data
+64-->[:open_file] C:\Users\Ecem\Documents\vsprojects\quesus\build\open_file\intermediates\merged_manifest\release\AndroidManifest.xml:17:13-19:53
+65                android:name="android.support.FILE_PROVIDER_PATHS"
+65-->[:open_file] C:\Users\Ecem\Documents\vsprojects\quesus\build\open_file\intermediates\merged_manifest\release\AndroidManifest.xml:18:17-67
+66                android:resource="@xml/filepaths" />
+66-->[:open_file] C:\Users\Ecem\Documents\vsprojects\quesus\build\open_file\intermediates\merged_manifest\release\AndroidManifest.xml:19:17-50
+67        </provider>
+68
+69        <uses-library
+69-->[androidx.window:window:1.0.0-beta04] C:\Users\Ecem\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+70            android:name="androidx.window.extensions"
+70-->[androidx.window:window:1.0.0-beta04] C:\Users\Ecem\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+71            android:required="false" />
+71-->[androidx.window:window:1.0.0-beta04] C:\Users\Ecem\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+72        <uses-library
+72-->[androidx.window:window:1.0.0-beta04] C:\Users\Ecem\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+73            android:name="androidx.window.sidecar"
+73-->[androidx.window:window:1.0.0-beta04] C:\Users\Ecem\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+74            android:required="false" />
+74-->[androidx.window:window:1.0.0-beta04] C:\Users\Ecem\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+75
+76        <provider
+76-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ecem\.gradle\caches\transforms-3\f3da131123e9b4eccc244f6ad91f009f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+77            android:name="androidx.startup.InitializationProvider"
+77-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ecem\.gradle\caches\transforms-3\f3da131123e9b4eccc244f6ad91f009f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+78            android:authorities="com.quesus.app.androidx-startup"
+78-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ecem\.gradle\caches\transforms-3\f3da131123e9b4eccc244f6ad91f009f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+79            android:exported="false" >
+79-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ecem\.gradle\caches\transforms-3\f3da131123e9b4eccc244f6ad91f009f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+80            <meta-data
+80-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ecem\.gradle\caches\transforms-3\f3da131123e9b4eccc244f6ad91f009f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+81                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+81-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ecem\.gradle\caches\transforms-3\f3da131123e9b4eccc244f6ad91f009f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+82                android:value="androidx.startup" />
+82-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ecem\.gradle\caches\transforms-3\f3da131123e9b4eccc244f6ad91f009f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+83            <meta-data
+83-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Ecem\.gradle\caches\transforms-3\bfb294eadd9142ad90bb62295accd8ec\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+84                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+84-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Ecem\.gradle\caches\transforms-3\bfb294eadd9142ad90bb62295accd8ec\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+85                android:value="androidx.startup" />
+85-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Ecem\.gradle\caches\transforms-3\bfb294eadd9142ad90bb62295accd8ec\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+86        </provider>
+87    </application>
+88
+89</manifest>
