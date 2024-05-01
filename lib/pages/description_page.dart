@@ -120,7 +120,7 @@ class _DescriptionPageState extends State<DescriptionPage>
         : Scaffold(
             backgroundColor: colorBackground,
             appBar: const QueSusAppBar(),
-            drawer: const QueSusDrawer(),
+            drawer: userSession.isAdmin == 1 ? const QueSusDrawer() : null,
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -188,7 +188,7 @@ class _DescriptionPageState extends State<DescriptionPage>
                           MaterialPageRoute(
                               builder: (context) => QuestionPage(
                                     title: "QueSus",
-                                    anketId: 1,
+                                    bankId: 1,
                                     codeLang: "tr",
                                     maxScore: 3,
                                   )),

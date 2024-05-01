@@ -13,14 +13,14 @@ import 'signin_page.dart';
 typedef void Randomise(List options);
 
 class QuestionPage extends StatefulWidget {
-  int anketId;
+  int bankId;
   String codeLang;
   String title;
   int maxScore;
 
   QuestionPage(
       {Key? key,
-      required this.anketId,
+      required this.bankId,
       required this.codeLang,
       required this.title,
       required this.maxScore})
@@ -82,7 +82,7 @@ class _QuestionPageState extends State<QuestionPage> {
 
   _futureWidget() {
     return FutureBuilder(
-      future: _apiQueSus.getQuestions(widget.anketId, 1, ""),
+      future: _apiQueSus.getQuestions(widget.bankId, 1, ""),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           List results = snapshot.data!.questions as List;

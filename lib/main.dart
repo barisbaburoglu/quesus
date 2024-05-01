@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quesus/constants/colors.dart';
 import 'package:quesus/pages/description_page.dart';
 import 'package:quesus/pages/questions_page.dart';
+import 'package:quesus/pages/report_page.dart';
 import 'package:quesus/pages/result_page.dart';
 import 'package:quesus/pages/signin_page.dart';
 import 'package:quesus/pages/signup_page.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
         '/results': (context) => const ResultPage(point: 0, maxPoint: 0),
         '/questions': (context) => const QuestionsPage(),
         '/users': (context) => const UsersPage(),
+        '/report': (context) => const ReportPage(),
       },
     );
   }

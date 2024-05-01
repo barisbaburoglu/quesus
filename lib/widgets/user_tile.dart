@@ -42,7 +42,7 @@ class _UserTileState extends State<UserTile> {
   void initState() {
     super.initState();
     userNameController.text = widget.user.userName!;
-    passwordController.text = widget.user.password!;
+    passwordController.text = "";
 
     isAdmin = widget.user.isAdmin! == 1;
     isActive = widget.user.isActive! == 1;
@@ -285,7 +285,7 @@ class _UserTileState extends State<UserTile> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
-                        'Soru Düzenleme',
+                        'Kullanıcı Düzenleme',
                         style: GoogleFonts.montserrat(
                             color: colorGreenPrimary,
                             fontWeight: FontWeight.bold,
@@ -412,15 +412,21 @@ class _UserTileState extends State<UserTile> {
                       color: colorGreenPrimary,
                       textColor: Colors.white,
                       onPressed: () async {
-                        if (userNameController.text.isEmpty ||
-                            passwordController.text.isEmpty) {
-                          showInfoDialog(context,
-                              "Lütfen tüm alanları eksiksiz doldurunuz!", 0);
+                        if (userNameController.text.isEmpty) {
+                          showInfoDialog(
+                              context,
+                              "Lütfen gerekli alanları eksiksiz doldurunuz!",
+                              0);
                         } else {
                           User userUpdate = User();
                           userUpdate = widget.user;
                           userUpdate.userName = userNameController.text;
-                          userUpdate.password = passwordController.text;
+                          if (passwordController.text.isNotEmpty) {
+                            userUpdate.password = ApiQueSus()
+                                .encryptData(passwordController.text)
+                                .toString();
+                          }
+
                           userUpdate.isAdmin = isAdmin ? 1 : 0;
                           userUpdate.isActive = isActive ? 1 : 0;
 

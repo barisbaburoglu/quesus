@@ -252,7 +252,7 @@ class _UsersPageState extends State<UsersPage> with TickerProviderStateMixin {
                                                           controller:
                                                               userNameController,
                                                           text: 'Kullanıcı',
-                                                          maxLines: 2,
+                                                          maxLines: 1,
                                                           textInputType:
                                                               TextInputType
                                                                   .text,
@@ -264,7 +264,7 @@ class _UsersPageState extends State<UsersPage> with TickerProviderStateMixin {
                                                           controller:
                                                               passwordController,
                                                           text: 'Şifre',
-                                                          maxLines: 2,
+                                                          maxLines: 1,
                                                           textInputType:
                                                               TextInputType
                                                                   .text,

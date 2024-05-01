@@ -1,5 +1,5 @@
 import '../models/user.dart';
 
-const api = "https://localhost:44384/api";
+const api = "https://api.que-sus.com/api";
 
 User userSession = User();

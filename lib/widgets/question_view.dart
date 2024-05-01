@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quesus/helper/api.dart';
 import 'package:quesus/pages/result_page.dart';
+import 'package:uuid/uuid.dart';
 
 import '../constants/colors.dart';
 import '../constants/secret.dart';
@@ -166,8 +167,10 @@ class _QuestionsPageViewState extends State<QuestionsPageView> {
                           child: MaterialButton(
                             color: colorGreenLight,
                             onPressed: () async {
+                              String uniqKey = const Uuid().v1();
                               for (var answer in _userAnswerList) {
                                 var s = await ApiQueSus().createAnswer(Answer(
+                                    uniqKey: uniqKey,
                                     optionId: answer.id,
                                     userId: userSession.id));
                               }

@@ -53,11 +53,11 @@ class _QueSusDrawerState extends State<QueSusDrawer> {
             child: ListView(
               padding: EdgeInsets.zero,
               children: <Widget>[
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 ListTile(
-                  leading: Icon(FontAwesomeIcons.house),
+                  leading: const Icon(FontAwesomeIcons.house),
                   title: Text(
                     'QueSus',
                     style: GoogleFonts.montserrat(
@@ -81,7 +81,7 @@ class _QueSusDrawerState extends State<QueSusDrawer> {
                   ),
                 ),
                 ListTile(
-                  leading: Icon(FontAwesomeIcons.question),
+                  leading: const Icon(FontAwesomeIcons.question),
                   title: Text(
                     'Soru İşlemleri',
                     style: GoogleFonts.montserrat(
@@ -106,7 +106,7 @@ class _QueSusDrawerState extends State<QueSusDrawer> {
                   ),
                 ),
                 ListTile(
-                  leading: Icon(FontAwesomeIcons.person),
+                  leading: const Icon(FontAwesomeIcons.person),
                   title: Text(
                     'Kullanıcı İşlemleri',
                     style: GoogleFonts.montserrat(
@@ -117,6 +117,30 @@ class _QueSusDrawerState extends State<QueSusDrawer> {
                   iconColor: colorGreenPrimary,
                   onTap: () {
                     Navigator.pushReplacementNamed(context, '/users');
+                  },
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 15,
+                    vertical: 5,
+                  ),
+                  child: Divider(
+                    color: colorGreenSecondary,
+                    height: 2,
+                  ),
+                ),
+                ListTile(
+                  leading: const Icon(FontAwesomeIcons.chartPie),
+                  title: Text(
+                    'Rapor',
+                    style: GoogleFonts.montserrat(
+                      color: colorGreenPrimary,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  iconColor: colorGreenPrimary,
+                  onTap: () {
+                    Navigator.pushReplacementNamed(context, '/report');
                   },
                 ),
               ],
