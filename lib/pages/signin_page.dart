@@ -140,7 +140,7 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
                           height: 200.0, // İkonun yüksekliği
                         ),
                         Text(
-                          "QUESTIONNAIRE SUSTAINABILITY",
+                          "QUESTIONS SUSTAINABILITY",
                           style: TextStyle(
                             color: colorGreenPrimary,
                             fontSize: 12.0, // Yazı büyüklüğü

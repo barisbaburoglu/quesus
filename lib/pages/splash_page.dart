@@ -54,7 +54,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
             SlideTransition(
               position: _offsetAnimation, // Yazı için animasyonlu pozisyon
               child: Text(
-                "QUESTIONNAIRE SUSTAINABILITY",
+                "QUESTIONS SUSTAINABILITY",
                 style: TextStyle(
                   color: colorGreenPrimary,
                   fontSize: 12.0, // Yazı büyüklüğü

@@ -134,7 +134,7 @@ class _DescriptionPageState extends State<DescriptionPage>
                     height: 200.0, // İkonun yüksekliği
                   ),
                   Text(
-                "QUESTIONNAIRE SUSTAINABILITY",
+                "QUESTIONS SUSTAINABILITY",
                 style: TextStyle(
                   color: colorGreenPrimary,
                   fontSize: 12.0, // Yazı büyüklüğü
