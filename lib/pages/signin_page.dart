@@ -139,6 +139,14 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
                           width: 200.0, // İkonun genişliği
                           height: 200.0, // İkonun yüksekliği
                         ),
+                        Text(
+                          "QUESTIONNAIRE SUSTAINABILITY",
+                          style: TextStyle(
+                            color: colorGreenPrimary,
+                            fontSize: 12.0, // Yazı büyüklüğü
+                            fontWeight: FontWeight.bold, // Yazı kalınlığı
+                          ),
+                        ),
                         SizedBox(
                           height: calculatedHeight(50, context),
                         ),
@@ -164,6 +172,7 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
                         SizedBox(
                           height: calculatedHeight(50, context),
                         ),
+                        if(!_loadingRegister)...[
                         InputRightLabel(
                           focusNode: userIdFocusNode,
                           width: calculatedWidth(310, context),
@@ -199,9 +208,14 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
                           height: 40,
                           padding: const EdgeInsets.all(8),
                           onPressed: () {
+                            setState(() {
+                              _loadingRegister = true;
+                            });
                             if (userIdController.text.isEmpty ||
                                 passwordController.text.isEmpty) {
-                              _loadingRegister = false;
+                              setState(() {
+                                _loadingRegister = false;
+                              });
                               showInfoDialog(
                                   context, "Lütfen her alanı doldurunuz!", 0);
                             } else {
@@ -213,7 +227,9 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
                                 ),
                               );
                               _futureUser!.then((user) {
-                                _loadingRegister = false;
+                                setState(() {
+                                  _loadingRegister = false;
+                                });
                                 if (user.error != "") {
                                   showInfoDialog(
                                       context, user.error.toString(), 0);
@@ -303,6 +319,11 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
                             ),
                           ),
                         ),
+                        ]else...[
+                          CircularProgressIndicator(
+                          color: colorGreenPrimary,
+                        ),
+                        ]
                       ],
                     ),
                   ),
