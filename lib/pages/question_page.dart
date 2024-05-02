@@ -82,7 +82,7 @@ class _QuestionPageState extends State<QuestionPage> {
 
   _futureWidget() {
     return FutureBuilder(
-      future: _apiQueSus.getQuestions(widget.bankId, 1, ""),
+      future: _apiQueSus.getQuestions(widget.bankId, 0, ""),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           List results = snapshot.data!.questions as List;
