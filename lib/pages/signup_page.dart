@@ -334,6 +334,7 @@ class _SignUpState extends State<SignUp> with SingleTickerProviderStateMixin {
                                         userName: userIdController.text,
                                         password: passwordController.text,
                                         isAdmin: 0,
+                                        isActive: 1,
                                       ),
                                     );
                                     _futureUser!.then(
