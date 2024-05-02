@@ -1,5 +1,5 @@
 import '../models/user.dart';
 
-const api = "https://quesusapi.azurewebsites.net/api";
+const api = "https://api.que-sus.com/api";
 
 User userSession = User();

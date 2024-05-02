@@ -133,6 +133,14 @@ class _DescriptionPageState extends State<DescriptionPage>
                     width: 200.0, // İkonun genişliği
                     height: 200.0, // İkonun yüksekliği
                   ),
+                  Text(
+                "QUESTIONNAIRE SUSTAINABILITY",
+                style: TextStyle(
+                  color: colorGreenPrimary,
+                  fontSize: 12.0, // Yazı büyüklüğü
+                  fontWeight: FontWeight.bold, // Yazı kalınlığı
+                ),
+              ),
                   SizedBox(
                     height: calculatedHeight(25, context),
                   ),
