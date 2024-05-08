@@ -38,11 +38,17 @@ class _QuestionTileState extends State<QuestionTile> {
   final questionFocusNode = FocusNode();
   final keywordsFocusNode = FocusNode();
 
+  
+  bool isActive = false;
+
   @override
   void initState() {
     super.initState();
     questionController.text = widget.question.question!;
     keywordsController.text = widget.question.keywords!;
+
+    
+    isActive = widget.question.isActive! == 1;
 
     for (var index = 0; index < widget.question.options!.length; index++) {
       TextEditingController optionController = TextEditingController();
@@ -50,6 +56,7 @@ class _QuestionTileState extends State<QuestionTile> {
       optionsControllers.add(optionController);
       scores.add(widget.question.options![index].score!);
     }
+    
   }
 
   void showInfoDialog(BuildContext context, String content, int iconType) {
@@ -131,7 +138,9 @@ class _QuestionTileState extends State<QuestionTile> {
                   style: GoogleFonts.montserrat(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
-                      color: colorGreenPrimary),
+                       color: widget.question.isActive == 1
+                        ? colorGreenPrimary
+                        : Colors.white,),
                   maxLines: 1,
                   softWrap: true,
                   textAlign: TextAlign.center,
@@ -144,7 +153,9 @@ class _QuestionTileState extends State<QuestionTile> {
             SizedBox(
               height: 20,
               child: VerticalDivider(
-                color: colorGreenPrimary,
+                 color: widget.question.isActive == 1
+                        ? colorGreenPrimary
+                        : Colors.white,
                 width: 2,
               ),
             ),
@@ -161,7 +172,9 @@ class _QuestionTileState extends State<QuestionTile> {
                   style: GoogleFonts.montserrat(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
-                      color: colorGreenPrimary),
+                       color: widget.question.isActive == 1
+                        ? colorGreenPrimary
+                        : Colors.white,),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.left,
@@ -280,6 +293,33 @@ class _QuestionTileState extends State<QuestionTile> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 20, vertical: 5),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          Checkbox(
+                                            value: isActive,
+                                            checkColor: colorGreenPrimary,
+                                            onChanged: (bool? value) {
+                                              setState(() {
+                                                isActive = value!;
+                                              });
+                                            },
+                                          ),
+                                          Text(
+                                            "Aktif",
+                                            style: GoogleFonts.montserrat(
+                                              color: colorGreenPrimary,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
                                     InputEdit(
                                       focusNode: questionFocusNode,
                                       controller: questionController,
@@ -366,6 +406,7 @@ class _QuestionTileState extends State<QuestionTile> {
                           questionUpdate = widget.question;
                           questionUpdate.question = questionController.text;
                           questionUpdate.keywords = keywordsController.text;
+                          questionUpdate.isActive = isActive ? 1 : 0;
                           for (var i = 0;
                               i < questionUpdate.options!.length;
                               i++) {

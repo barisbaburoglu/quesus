@@ -43,6 +43,8 @@ class _QuestionsPageState extends State<QuestionsPage>
   final countTopFocusNode = FocusNode();
 
   bool showAllQuestions = false;
+  
+  bool isActive = false;
 
   getUser() async {
     prefs = await SharedPreferences.getInstance();
@@ -397,6 +399,46 @@ class _QuestionsPageState extends State<QuestionsPage>
                                                           CrossAxisAlignment
                                                               .center,
                                                       children: [
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .symmetric(
+                                                                  horizontal:
+                                                                      20,
+                                                                  vertical: 5),
+                                                          child: Row(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .start,
+                                                            children: [
+                                                              Checkbox(
+                                                                value: isActive,
+                                                                checkColor:
+                                                                    colorGreenPrimary,
+                                                                onChanged:
+                                                                    (bool?
+                                                                        value) {
+                                                                  setState(() {
+                                                                    isActive =
+                                                                        value!;
+                                                                  });
+                                                                },
+                                                              ),
+                                                              Text(
+                                                                "Aktif",
+                                                                style: GoogleFonts
+                                                                    .montserrat(
+                                                                  color:
+                                                                      colorGreenPrimary,
+                                                                  fontSize: 14,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
                                                         InputEdit(
                                                           focusNode:
                                                               questionFocusNode,
@@ -515,6 +557,8 @@ class _QuestionsPageState extends State<QuestionsPage>
                                                   questionController.text;
                                               questionNew.keywords =
                                                   keywordsController.text;
+                                              questionNew.isActive =
+                                                  isActive ? 1 : 0;
                                               List<Option> optionList = [];
                                               for (var i = 0; i < 5; i++) {
                                                 Option option = Option(

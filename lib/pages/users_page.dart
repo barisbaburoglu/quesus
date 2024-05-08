@@ -38,7 +38,7 @@ class _UsersPageState extends State<UsersPage> with TickerProviderStateMixin {
   TextEditingController passwordController = TextEditingController();
 
   bool isAdmin = false;
-  bool isActive = false;
+  bool isActive = true;
 
   final questionFocusNode = FocusNode();
   final passwordFocusNode = FocusNode();

@@ -31,6 +31,7 @@ class Question {
   String? question;
   int? bankId;
   String? keywords;
+  int? isActive;
   List<Option>? options;
 
   Question({this.id, this.question, this.bankId, this.keywords, this.options});
@@ -40,6 +41,7 @@ class Question {
     question = json['question'];
     bankId = json['bankId'];
     keywords = json['keywords'];
+    isActive = json['isActive'];
     if (json['options'] != null) {
       options = <Option>[];
       json['options'].forEach((v) {
@@ -54,6 +56,7 @@ class Question {
     data['question'] = question;
     data['bankId'] = bankId;
     data['keywords'] = keywords;
+    data['isActive'] = isActive;
     if (options != null) {
       data['options'] = options!.map((v) => v.toJson()).toList();
     }
