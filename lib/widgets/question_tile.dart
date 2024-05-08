@@ -122,6 +122,7 @@ class _QuestionTileState extends State<QuestionTile> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: widget.question.isActive == 1 ? Colors.white : colorRed,
       elevation: 2,
       child: ListTile(
         title: Row(
@@ -236,7 +237,7 @@ class _QuestionTileState extends State<QuestionTile> {
                     },
                     child: Icon(
                       FontAwesomeIcons.trashCan,
-                      color: colorRed,
+                      color: widget.question.isActive == 1 ? colorRed : Colors.white,
                     ),
                   ),
                 ],
