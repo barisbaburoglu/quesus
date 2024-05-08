@@ -324,7 +324,7 @@ class _QuestionsPageViewState extends State<QuestionsPageView> {
                                     height: 10,
                                   ),
                                   Text(
-                                    """ ${widget.results.elementAt(index).question}""",
+                                    ' ${widget.results.elementAt(index).question}',
                                     style: GoogleFonts.montserrat(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 18,
