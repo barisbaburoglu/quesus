@@ -2,8 +2,8 @@ io.flutter.plugins.sharedpreferences.shared_preferences_android-jetified-window-
 io.flutter.plugins.sharedpreferences.shared_preferences_android-core-1.6.0-1 C:\Users\Ecem\.gradle\caches\transforms-3\4ca28c4a71705f8a687c69dda140a277\transformed\core-1.6.0\res
 io.flutter.plugins.sharedpreferences.shared_preferences_android-jetified-annotation-experimental-1.1.0-2 C:\Users\Ecem\.gradle\caches\transforms-3\8965c941cf4bee4d72541b965c7c9d39\transformed\jetified-annotation-experimental-1.1.0\res
 io.flutter.plugins.sharedpreferences.shared_preferences_android-jetified-window-1.0.0-beta04-3 C:\Users\Ecem\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\res
-io.flutter.plugins.sharedpreferences.shared_preferences_android-main-4 C:\Users\Ecem\Documents\flutter\.pub-cache\hosted\pub.dev\shared_preferences_android-2.2.1\android\src\main\res
-io.flutter.plugins.sharedpreferences.shared_preferences_android-release-5 C:\Users\Ecem\Documents\flutter\.pub-cache\hosted\pub.dev\shared_preferences_android-2.2.1\android\src\release\res
+io.flutter.plugins.sharedpreferences.shared_preferences_android-main-4 C:\Users\Ecem\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.2.1\android\src\main\res
+io.flutter.plugins.sharedpreferences.shared_preferences_android-release-5 C:\Users\Ecem\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.2.1\android\src\release\res
 io.flutter.plugins.sharedpreferences.shared_preferences_android-pngs-6 C:\Users\Ecem\Documents\vsprojects\quesus\build\shared_preferences_android\generated\res\pngs\release
 io.flutter.plugins.sharedpreferences.shared_preferences_android-resValues-7 C:\Users\Ecem\Documents\vsprojects\quesus\build\shared_preferences_android\generated\res\resValues\release
 io.flutter.plugins.sharedpreferences.shared_preferences_android-rs-8 C:\Users\Ecem\Documents\vsprojects\quesus\build\shared_preferences_android\generated\res\rs\release

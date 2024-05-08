@@ -157,7 +157,7 @@ class _QuestionTileState extends State<QuestionTile> {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  questionController.text,
+                  """ ${questionController.text}""",
                   style: GoogleFonts.montserrat(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,

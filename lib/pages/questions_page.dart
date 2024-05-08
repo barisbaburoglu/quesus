@@ -64,7 +64,7 @@ class _QuestionsPageState extends State<QuestionsPage>
 
   void getQuestions() async {
     questionList = await ApiQueSus()
-        .getQuestions(1, showAllQuestions ? 1 : 0, searchController.text);
+        .getQuestions(1, 1, searchController.text);
 
     setState(() {
       _loadingQuestions = false;
@@ -589,33 +589,33 @@ class _QuestionsPageState extends State<QuestionsPage>
                         },
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 5),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Checkbox(
-                            value: showAllQuestions,
-                            checkColor: colorGreenPrimary,
-                            onChanged: (bool? value) {
-                              setState(() {
-                                showAllQuestions = value!;
-                                getQuestions();
-                              });
-                            },
-                          ),
-                          Text(
-                            "Tüm Soruları Göster",
-                            style: GoogleFonts.montserrat(
-                              color: colorGreenPrimary,
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: const EdgeInsets.symmetric(
+                    //       horizontal: 20, vertical: 5),
+                    //   child: Row(
+                    //     mainAxisAlignment: MainAxisAlignment.start,
+                    //     children: [
+                    //       Checkbox(
+                    //         value: showAllQuestions,
+                    //         checkColor: colorGreenPrimary,
+                    //         onChanged: (bool? value) {
+                    //           setState(() {
+                    //             showAllQuestions = value!;
+                    //             getQuestions();
+                    //           });
+                    //         },
+                    //       ),
+                    //       Text(
+                    //         "Tüm Soruları Göster",
+                    //         style: GoogleFonts.montserrat(
+                    //           color: colorGreenPrimary,
+                    //           fontSize: 14,
+                    //           fontWeight: FontWeight.bold,
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
                     _loadingQuestions
                         ? Center(
                             child: CircularProgressIndicator(
