@@ -17,8 +17,8 @@ class EncryptionModes {
 }
 
 class ApiQueSus {
-  static const encryptionKey = "QueSus2024?*z7I/enrUy1S/xwH6BR==";
-  static const encryptionIV = "QueSus2024?*sk9@";
+  static const encryptionKey = "**************************";
+  static const encryptionIV = "**************";
 
   encryptData(String text) {
     final key = Key.fromUtf8(encryptionKey);
