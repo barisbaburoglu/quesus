@@ -81,10 +81,6 @@ class _ReportPageState extends State<ReportPage> with TickerProviderStateMixin {
     var q = getReport();
   }
 
-  @override
-  void dispose() {
-    super.dispose();
-  }
 
   Future<void> generateExcel() async {
     //Create a Excel document.
@@ -196,7 +192,7 @@ class _ReportPageState extends State<ReportPage> with TickerProviderStateMixin {
     range8.cellStyle.bold = true;
 
     //footer begin
-    sheet.getRangeByIndex(3 + reportList.length + 2, 1).text = 'QueSus';
+    sheet.getRangeByIndex(3 + reportList.length + 2, 1).text = 'QUESTIONS SUSTAINABILITY';
     sheet.getRangeByIndex(3 + reportList.length + 2, 1).cellStyle.fontSize = 12;
 
     final Range range9 = sheet.getRangeByName(

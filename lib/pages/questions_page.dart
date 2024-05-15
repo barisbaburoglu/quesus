@@ -544,8 +544,7 @@ class _QuestionsPageState extends State<QuestionsPage>
                                                 optionsControllers.any(
                                                     (x) => x.text.isEmpty) ||
                                                 !scores.any((x) => x == 1)) {
-                                              print(optionsControllers
-                                                  .any((x) => x.text.isEmpty));
+                                                  
                                               showInfoDialog(
                                                   context,
                                                   "Lütfen tüm alanları eksiksiz doldurunuz!",

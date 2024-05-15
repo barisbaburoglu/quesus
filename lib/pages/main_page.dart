@@ -96,7 +96,6 @@ class _MainPageState extends State<MainPage> with WidgetsBindingObserver {
         checkingConnection = false;
       });
     } on PlatformException catch (e) {
-      print('Couldn\'t check connectivity status');
       return;
     }
 

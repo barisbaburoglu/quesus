@@ -1,8 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quesus/pages/question_page.dart';
-import 'package:quesus/pages/questions_page.dart';
 import 'package:quesus/pages/signin_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -21,11 +22,8 @@ class DescriptionPage extends StatefulWidget {
 
 class _DescriptionPageState extends State<DescriptionPage>
     with TickerProviderStateMixin {
-  late List<AnimationController> _controllers = [];
-  late List<Animation<Offset>> _animations = [];
 
-  late AnimationController _animationControllerBtn;
-  bool _isVisible = false;
+  Color _animatedColor = colorGreenPrimary;
 
   late SharedPreferences prefs;
   late bool _loadingUser;
@@ -57,60 +55,24 @@ class _DescriptionPageState extends State<DescriptionPage>
 
     var checkUser = getUser();
 
-    _controllers = List.generate(
-      5,
-      (index) => AnimationController(
-        vsync: this,
-        duration: const Duration(milliseconds: 1000),
-      ),
-    );
+  }
 
-    _animations = List.generate(
-      5,
-      (index) => Tween<Offset>(
-        begin: const Offset(20, 0),
-        end: Offset.zero,
-      ).animate(
-        CurvedAnimation(
-          curve: Curves.easeInOut,
-          parent: _controllers[index],
-        ),
-      ),
-    );
 
-    _animationControllerBtn = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 500),
-    );
-
-    Future.delayed(const Duration(seconds: 3), () {
-      if (!mounted) return;
-      setState(() {
-        _isVisible = true;
-      });
-      _animationControllerBtn.forward();
+  void _startAnimations() {
+    Timer.periodic(const Duration(milliseconds: 400), (timer) {
+      if(mounted){
+        setState(() {
+          _animatedColor = _animatedColor == colorGreenPrimary ? colorGreenLight : colorGreenPrimary;
+        });
+      }
+      
     });
   }
 
   @override
-  void dispose() {
-    for (var controller in _controllers) {
-      controller.dispose();
-    }
-    _animationControllerBtn.dispose();
-    super.dispose();
-  }
-
-  void _startAnimations() {
-    for (var i = 0; i < _controllers.length; i++) {
-      Future.delayed(Duration(milliseconds: i * 500), () {
-        _controllers[i].forward();
-      });
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
+    double contentWidth = MediaQuery.of(context).size.width < 768 ? 300 : 700;
+    double imageWidth = MediaQuery.of(context).size.width < 768 ? 250 : 400;
     return _loadingUser
         ? Center(
             child: CircularProgressIndicator(
@@ -122,123 +84,231 @@ class _DescriptionPageState extends State<DescriptionPage>
             appBar: const QueSusAppBar(),
             drawer: userSession.isAdmin == 1 ? const QueSusDrawer() : null,
             body: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    height: calculatedHeight(25, context),
-                  ),
-                  Image.asset(
-                    'assets/icon.png', // İkonunuzun dosya yolu
-                    width: 200.0, // İkonun genişliği
-                    height: 200.0, // İkonun yüksekliği
-                  ),
-                  Text(
-                "QUESTIONS SUSTAINABILITY",
-                style: TextStyle(
-                  color: colorGreenPrimary,
-                  fontSize: 12.0, // Yazı büyüklüğü
-                  fontWeight: FontWeight.bold, // Yazı kalınlığı
-                ),
-              ),
-                  SizedBox(
-                    height: calculatedHeight(25, context),
-                  ),
-                  SizedBox(
-                    height: calculatedHeight(40, context),
-                    width: calculatedWidth(250, context),
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: Text(
-                        'NASIL OYNANIR?',
-                        style: GoogleFonts.josefinSans(
-                          fontSize: 30,
-                          color: colorGreenLight,
-                          fontWeight: FontWeight.bold,
+              child: SizedBox(
+                width: contentWidth,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: calculatedHeight(20, context),
+                    ),
+                    // Image.asset(
+                    //   'assets/icon.png', // İkonunuzun dosya yolu
+                    //   width: 200.0, // İkonun genişliği
+                    //   height: 200.0, // İkonun yüksekliği
+                    // ),
+                    // Text(
+                    //   "QUESTIONS SUSTAINABILITY",
+                    //   style: TextStyle(
+                    //     color: colorGreenPrimary,
+                    //     fontSize: 12.0, // Yazı büyüklüğü
+                    //     fontWeight: FontWeight.bold, // Yazı kalınlığı
+                    //   ),
+                    // ),
+                    // SizedBox(
+                    //   height: calculatedHeight(25, context),
+                    // ),
+                    SizedBox(
+                      height: calculatedHeight(40, context),
+                      width: calculatedWidth(250, context),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Oyun Yönergesi',
+                          style: GoogleFonts.josefinSans(
+                            fontSize: 30,
+                            color: colorGreenLight,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          maxLines: 1,
+                          textAlign: TextAlign.center,
+                          softWrap: false,
                         ),
-                        maxLines: 1,
-                        textAlign: TextAlign.center,
-                        softWrap: false,
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: calculatedHeight(10, context),
-                  ),
-                  SizedBox(
-                    width: 300,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        _buildListItem("1. İlk madde", 0),
-                        _buildListItem("2. İkinci madde", 1),
-                        _buildListItem("3. Üçüncü madde", 2),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: calculatedHeight(25, context),
-                  ),
-                  AnimatedOpacity(
-                    opacity: _isVisible ? 1.0 : 0.0,
-                    duration: const Duration(milliseconds: 500),
-                    child: MaterialButton(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      minWidth: 225,
-                      height: 40,
-                      padding: const EdgeInsets.all(8),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => QuestionPage(
-                                    title: "QueSus",
-                                    bankId: 1,
-                                    codeLang: "tr",
-                                    maxScore: 3,
-                                  )),
-                        );
-                      },
-                      color: colorGreenPrimary,
-                      textColor: Colors.white,
-                      child: SizedBox(
-                        width: 225,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text(
-                              "Başla",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                    SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height - calculatedHeight(175, context),
+                      child: SingleChildScrollView(
+                        child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: calculatedHeight(20, context),
                             ),
-                            SizedBox(width: 5),
-                            Icon(Icons.play_arrow),
+                            Text(
+                              "1.	Başla butonu ile oyun başlatılır",
+                              style: TextStyle(fontSize: 16, color: colorGreenPrimary, fontWeight: FontWeight.bold,),
+                              textAlign: TextAlign.left,
+                            ),
+                            SizedBox(
+                              height: calculatedHeight(20, context),
+                            ),
+                            Center(
+                              child: MaterialButton(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                minWidth: 100,
+                                height: 20,
+                                padding: const EdgeInsets.all(8),
+                                onPressed: () {},
+                                color: colorGreenPrimary,
+                                textColor: Colors.white,
+                                child: SizedBox(
+                                  width: 100,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: const [
+                                      Text(
+                                        "Başla",
+                                        style: TextStyle(fontWeight: FontWeight.bold),
+                                      ),
+                                      SizedBox(width: 5),
+                                      Icon(Icons.play_arrow),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: calculatedHeight(20, context),
+                            ),
+                            Text(
+                              "2.	Anahtar Kelimeler sayfası gelir. Verilen anahtar kelimelerle ilgili internetten araştırma yapılıp sayfaya geri dönülür ve Soruyu Göster butonuna tıklanır.",
+                              style: TextStyle(fontSize: 16, color: colorGreenPrimary, fontWeight: FontWeight.bold,),
+                              textAlign: TextAlign.left,
+                            ),
+                            SizedBox(
+                              height: calculatedHeight(20, context),
+                            ),
+                            Center(
+                              child: Image.asset(
+                                'assets/2.jpg', 
+                                width: imageWidth, 
+                              ),
+                            ),
+                            SizedBox(
+                              height: calculatedHeight(20, context),
+                            ),
+                            Text(
+                              "3.	Soru sayfası açılır. Soru sayfasında çıkan soru cevaplanır. ",
+                              style: TextStyle(fontSize: 16, color: colorGreenPrimary, fontWeight: FontWeight.bold,),
+                              textAlign: TextAlign.left,
+                            ),
+                            SizedBox(
+                              height: calculatedHeight(20, context),
+                            ),
+                            Center(
+                              child: Image.asset(
+                                'assets/3.jpg',
+                                width: imageWidth, 
+                              ),
+                                              
+                            ),
+                            SizedBox(
+                              height: calculatedHeight(20, context),
+                            ),
+                            Text(
+                              "4.	Soru yanıtlandığında sorunun doğru veya yanlış olduğuna dair sayfa açılır. Doğru ise 1 puan kazanılır yanlış ise 1 puan kaybedilir. ",
+                              style: TextStyle(fontSize: 16, color: colorGreenPrimary, fontWeight: FontWeight.bold,),
+                              textAlign: TextAlign.left,
+                            ),
+                            SizedBox(
+                              height: calculatedHeight(20, context),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Center(
+                                  child: Image.asset(
+                                    'assets/4-1.jpg',
+                                    width: imageWidth / 2, 
+                                  ),                 
+                                ),
+                                Center(
+                                  child: Image.asset(
+                                    'assets/4-2.jpg',
+                                    width: imageWidth / 2, 
+                                  ),                 
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: calculatedHeight(50, context),
+                            ),
+                            Center(
+                              child: Text(
+                                "Başlamak için butona bas!",
+                                style: TextStyle(fontSize: 16, color: _animatedColor, fontWeight: FontWeight.bold,),
+                                textAlign: TextAlign.center,
+                                maxLines: 2,
+                              ),
+                            ),
+                            SizedBox(
+                              height: calculatedHeight(10, context),
+                            ),
+                            Center(
+                              child: Icon(
+                                FontAwesomeIcons.downLong,
+                                size: 20,
+                                color: _animatedColor, 
+                              ),
+                            ),
+                            SizedBox(
+                              height: calculatedHeight(20, context),
+                            ),
+                            Center(
+                              child: MaterialButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  minWidth: 225,
+                                  height: 40,
+                                  padding: const EdgeInsets.all(8),
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => QuestionPage(
+                                                title: "QueSus",
+                                                bankId: 1,
+                                                codeLang: "tr",
+                                                maxScore: 3,
+                                              )),
+                                    );
+                                  },
+                                  color: colorGreenPrimary,
+                                  textColor: Colors.white,
+                                  child: SizedBox(
+                                    width: 225,
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: const [
+                                        Text(
+                                          "Başla",
+                                          style: TextStyle(fontWeight: FontWeight.bold),
+                                        ),
+                                        SizedBox(width: 5),
+                                        Icon(Icons.play_arrow),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                            ),
+                            SizedBox(
+                              height: calculatedHeight(20, context),
+                            ),
                           ],
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: calculatedHeight(10, context),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           );
-  }
-
-  Widget _buildListItem(String text, int index) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: SlideTransition(
-        position: _animations[index],
-        child: Text(
-          text,
-          style: TextStyle(fontSize: 16, color: colorGreenPrimary),
-        ),
-      ),
-    );
   }
 }
