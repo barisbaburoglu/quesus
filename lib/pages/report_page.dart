@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:quesus/models/report.dart';
+import 'package:quesus/pages/about_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_xlsio/xlsio.dart';
 
@@ -55,7 +56,7 @@ class _ReportPageState extends State<ReportPage> with TickerProviderStateMixin {
       if (userSession.userName!.isEmpty) {
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
-              builder: (context) => const SignIn(),
+              builder: (context) => const AboutPage(),
             ),
             (route) => false);
       }

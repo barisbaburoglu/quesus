@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quesus/pages/about_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../constants/colors.dart';
@@ -32,7 +33,7 @@ class _QueSusAppBarState extends State<QueSusAppBar> {
       if (userSession.userName!.isEmpty) {
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
-              builder: (context) => const SignIn(),
+              builder: (context) => const AboutPage(),
             ),
             (route) => false);
       }
@@ -54,12 +55,20 @@ class _QueSusAppBarState extends State<QueSusAppBar> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
-              child: Row(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
                     'assets/quesuslogo.png',
-                    width: 160,
+                    width: 150,
+                  ),
+                  Text(
+                    "QUESTIONS SUSTAINABILITY",
+                    style: TextStyle(
+                      color: colorGreenPrimary,
+                      fontSize: 11.0, // Yazı büyüklüğü
+                      fontWeight: FontWeight.bold, // Yazı kalınlığı
+                    ),
                   ),
                 ],
               ),

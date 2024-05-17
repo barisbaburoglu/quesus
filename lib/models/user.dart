@@ -4,6 +4,7 @@ class User {
   String? password;
   int? isAdmin;
   int? isActive;
+  int? checkedPolicy;
   String? error = "";
 
   User(
@@ -12,6 +13,7 @@ class User {
       this.password,
       this.isAdmin,
       this.isActive,
+      this.checkedPolicy,
       this.error});
 
   User.fromJson(Map<String, dynamic> mapOfJson)
@@ -19,7 +21,9 @@ class User {
         userName = mapOfJson["userName"] ?? "",
         password = mapOfJson["password"] ?? "",
         isAdmin = mapOfJson["isAdmin"] ?? 0,
-        isActive = mapOfJson["isActive"] ?? 0;
+        isActive = mapOfJson["isActive"] ?? 0,
+        checkedPolicy = mapOfJson["checkedPolicy"] ?? 0,
+        error = mapOfJson["error"] ?? 0;
 
   Map<String, dynamic> toJson() => {
         if (id != null) 'id': id,
@@ -27,6 +31,7 @@ class User {
         if (password != null) 'password': password,
         if (isAdmin != null) 'isAdmin': isAdmin,
         if (isActive != null) 'isActive': isActive,
+        if (checkedPolicy != null) 'isActive': checkedPolicy,
       };
 
   Map<String, dynamic> toJsonLogin() => {

@@ -56,6 +56,7 @@ class ApiQueSus {
       body: jsonEncode({
         'username': user.userName,
         'password': user.password,
+        'checkedPolicy': user.checkedPolicy,
       }),
     );
 

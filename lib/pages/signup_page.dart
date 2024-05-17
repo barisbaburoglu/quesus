@@ -189,19 +189,33 @@ class _SignUpState extends State<SignUp> with SingleTickerProviderStateMixin {
         child: Scaffold(
           backgroundColor: colorBackground,
           appBar: AppBar(
-            title: Text(
-              "Giriş Yap",
-              style: TextStyle(
-                color: colorGreenPrimary,
+            title: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/quesuslogo.png',
+                    width: 150,
+                  ),
+                  Text(
+                    "QUESTIONS SUSTAINABILITY",
+                    style: TextStyle(
+                      color: colorGreenPrimary,
+                      fontSize: 11.0, // Yazı büyüklüğü
+                      fontWeight: FontWeight.bold, // Yazı kalınlığı
+                    ),
+                  ),
+                ],
               ),
             ),
-            backgroundColor: colorAppBar,
-            foregroundColor: colorGreenPrimary,
-            leading: BackButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back, color: colorGreenPrimary),
+              onPressed: () => Navigator.of(context).pop(),
             ),
+            backgroundColor:
+                colorAppBar, // Renkleri düzenlemek için varsayılan değerleri kullanabilirsiniz.
+            foregroundColor: colorGreenPrimary,
+            shadowColor: colorGreenPrimary,
           ),
           body: Center(
             child: Stack(
@@ -221,6 +235,14 @@ class _SignUpState extends State<SignUp> with SingleTickerProviderStateMixin {
                                 'assets/icon.png', // İkonunuzun dosya yolu
                                 width: 200.0, // İkonun genişliği
                                 height: 200.0, // İkonun yüksekliği
+                              ),
+                              Text(
+                                "QUESTIONS SUSTAINABILITY",
+                                style: TextStyle(
+                                  color: colorGreenPrimary,
+                                  fontSize: 12.0, // Yazı büyüklüğü
+                                  fontWeight: FontWeight.bold, // Yazı kalınlığı
+                                ),
                               ),
                               SizedBox(
                                 height: calculatedHeight(50, context),
@@ -340,10 +362,16 @@ class _SignUpState extends State<SignUp> with SingleTickerProviderStateMixin {
                                     _futureUser!.then(
                                       (user) {
                                         _loadingRegister = false;
-                                        showRedirectDialog(
-                                            context,
-                                            "Kaydınız Başarılı \n\n Giriş sayfasından giriş yapabilirsiniz.",
-                                            1);
+
+                                        if (user.error != "") {
+                                          showInfoDialog(context,
+                                              user.error.toString(), 0);
+                                        } else {
+                                          showRedirectDialog(
+                                              context,
+                                              "Kaydınız Başarılı \n\n Giriş sayfasından giriş yapabilirsiniz.",
+                                              1);
+                                        }
                                       },
                                     );
                                   }

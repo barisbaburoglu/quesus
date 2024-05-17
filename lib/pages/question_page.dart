@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quesus/constants/colors.dart';
+import 'package:quesus/pages/about_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../constants/secret.dart';
@@ -48,7 +49,7 @@ class _QuestionPageState extends State<QuestionPage> {
       if (userSession.userName!.isEmpty) {
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
-              builder: (context) => const SignIn(),
+              builder: (context) => const AboutPage(),
             ),
             (route) => false);
       }

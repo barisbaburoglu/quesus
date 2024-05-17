@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:quesus/helper/api.dart';
 import 'package:quesus/models/bank.dart';
 import 'package:quesus/models/option.dart';
+import 'package:quesus/pages/about_page.dart';
 import 'package:quesus/pages/signin_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -57,7 +58,7 @@ class _QuestionsPageState extends State<QuestionsPage>
       if (userSession.userName!.isEmpty) {
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
-              builder: (context) => const SignIn(),
+              builder: (context) => const AboutPage(),
             ),
             (route) => false);
       }

@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:quesus/pages/about_page.dart';
 import 'package:quesus/pages/description_page.dart';
 import 'package:quesus/pages/signin_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -52,7 +53,7 @@ class _MainPageState extends State<MainPage> with WidgetsBindingObserver {
       if (userSession.userName!.isEmpty) {
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
-              builder: (context) => const SignIn(),
+              builder: (context) => const AboutPage(),
             ),
             (route) => false);
       }
@@ -166,7 +167,7 @@ class _MainPageState extends State<MainPage> with WidgetsBindingObserver {
                         ),
                       )
                     : userSession.userName!.isEmpty
-                        ? const SignIn()
+                        ? const AboutPage()
                         : const DescriptionPage();
               }
             }
