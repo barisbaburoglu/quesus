@@ -23,7 +23,7 @@ class User {
         isAdmin = mapOfJson["isAdmin"] ?? 0,
         isActive = mapOfJson["isActive"] ?? 0,
         checkedPolicy = mapOfJson["checkedPolicy"] ?? 0,
-        error = mapOfJson["error"] ?? 0;
+        error = mapOfJson["error"] ?? "";
 
   Map<String, dynamic> toJson() => {
         if (id != null) 'id': id,
