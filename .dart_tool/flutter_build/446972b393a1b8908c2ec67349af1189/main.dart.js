@@ -93627,7 +93627,7 @@ s.toString
 return A.aJw($.cM().cG(0,s,t.U))},
 $S:619}
 A.fu.prototype={
-IY(a){var s,r=new Uint8Array(A.em(B.I.gdc().bA("**************************"))),q=new Uint8Array(A.em(B.I.gdc().bA("**************"))),p=$.cM().cG(0,"AES/CBC/PKCS7",t.g9)
+IY(a){var s,r=new Uint8Array(A.em(B.I.gdc().bA("QueSus2024?*z7I/enrUy1S/xwH6BR=="))),q=new Uint8Array(A.em(B.I.gdc().bA("QueSus2024?*sk9@"))),p=$.cM().cG(0,"AES/CBC/PKCS7",t.g9)
 p=p
 s=new A.abc(new A.a45(new A.afa(r),B.JJ,"PKCS7",p,null)).aoI(B.I.gdc().bA(a),new A.aek(q))
 return B.ki.gdc().bA(s.a)},
@@ -93637,7 +93637,7 @@ var $async$wu=A.T(function(b,c){if(b===1)return A.P(c,r)
 while(true)switch(s){case 0:k=a.c
 k.toString
 a.c=p.IY(k)
-k=A.f7("***************************/Questions/Login",0,null)
+k=A.f7("https://quesusapi.azurewebsites.net/api/Questions/Login",0,null)
 o=t.N
 n=A.aC(["Content-Type","application/json; charset=UTF-8"],o,o)
 s=3
@@ -93671,7 +93671,7 @@ return A.R($async$wu,r)},
 AJ(a,b){return this.any(0,b)},
 any(a,b){var s=0,r=A.S(t.cI),q,p,o,n
 var $async$AJ=A.T(function(c,d){if(c===1)return A.P(d,r)
-while(true)switch(s){case 0:o=A.f7("***************************/Questions/CreateAnswer",0,null)
+while(true)switch(s){case 0:o=A.f7("https://quesusapi.azurewebsites.net/api/Questions/CreateAnswer",0,null)
 n=t.N
 n=A.aC(["Content-Type","application/json; charset=UTF-8"],n,n)
 s=3
@@ -93692,7 +93692,7 @@ if(m!=null)if(m.length!==0)a.c=p.IY(m)
 o=B.a8.kq(a.dG(),null)
 m=t.N
 s=3
-return A.a1(A.a3L(A.f7("***************************/Questions/CreateUser",0,null),o,A.aC(["Content-Type","application/json; charset=UTF-8"],m,m)),$async$vv)
+return A.a1(A.a3L(A.f7("https://quesusapi.azurewebsites.net/api/Questions/CreateUser",0,null),o,A.aC(["Content-Type","application/json; charset=UTF-8"],m,m)),$async$vv)
 case 3:n=c
 if(n.b===200){q=A.aK2(B.a8.vy(0,A.v4(A.uX(n.e).c.a.h(0,"charset")).cQ(0,n.w),null))
 s=1
@@ -93704,7 +93704,7 @@ a_1(a){var s=0,r=A.S(t.KO),q,p,o
 var $async$xt=A.T(function(b,c){if(b===1)return A.P(c,r)
 while(true)switch(s){case 0:p=t.N
 s=3
-return A.a1(A.aT6(A.f7("***************************/Questions/GetUsers?userName="+a,0,null),A.aC(["Content-Type","application/json; charset=UTF-8"],p,p)),$async$xt)
+return A.a1(A.aT6(A.f7("https://quesusapi.azurewebsites.net/api/Questions/GetUsers?userName="+a,0,null),A.aC(["Content-Type","application/json; charset=UTF-8"],p,p)),$async$xt)
 case 3:o=c
 if(o.b===200){q=J.Aa(t.j.a(B.a8.cQ(0,A.v4(A.uX(o.e).c.a.h(0,"charset")).cQ(0,o.w))),new A.a4q(),t.Wy).f4(0)
 s=1
@@ -93717,7 +93717,7 @@ var $async$CY=A.T(function(b,c){if(b===1)return A.P(c,r)
 while(true)switch(s){case 0:p=B.a8.kq(a.dG(),null)
 o=t.N
 s=3
-return A.a1(A.aLg(A.f7("***************************/Questions/UpdateUser",0,null),p,A.aC(["Content-Type","application/json; charset=UTF-8"],o,o)),$async$CY)
+return A.a1(A.aLg(A.f7("https://quesusapi.azurewebsites.net/api/Questions/UpdateUser",0,null),p,A.aC(["Content-Type","application/json; charset=UTF-8"],o,o)),$async$CY)
 case 3:if(c.b===200){q=!0
 s=1
 break}else{q=!1
@@ -93730,7 +93730,7 @@ var $async$AU=A.T(function(b,c){if(b===1)return A.P(c,r)
 while(true)switch(s){case 0:p=B.a8.kq(a.dG(),null)
 o=t.N
 s=3
-return A.a1(A.aLv(A.f7("***************************/Questions/DeleteUser",0,null),p,A.aC(["Content-Type","application/json; charset=UTF-8"],o,o)),$async$AU)
+return A.a1(A.aLv(A.f7("https://quesusapi.azurewebsites.net/api/Questions/DeleteUser",0,null),p,A.aC(["Content-Type","application/json; charset=UTF-8"],o,o)),$async$AU)
 case 3:if(c.b===200){q=!0
 s=1
 break}else{q=!1
@@ -93743,7 +93743,7 @@ var $async$AM=A.T(function(b,c){if(b===1)return A.P(c,r)
 while(true)switch(s){case 0:p=B.a8.kq(a.dG(),null)
 o=t.N
 s=3
-return A.a1(A.a3L(A.f7("***************************/Questions/CreateQuestion",0,null),p,A.aC(["Content-Type","application/json; charset=UTF-8"],o,o)),$async$AM)
+return A.a1(A.a3L(A.f7("https://quesusapi.azurewebsites.net/api/Questions/CreateQuestion",0,null),p,A.aC(["Content-Type","application/json; charset=UTF-8"],o,o)),$async$AM)
 case 3:n=c
 if(n.b===200){q=A.aPr(B.a8.vy(0,A.v4(A.uX(n.e).c.a.h(0,"charset")).cQ(0,n.w),null))
 s=1
@@ -93756,7 +93756,7 @@ var $async$CV=A.T(function(b,c){if(b===1)return A.P(c,r)
 while(true)switch(s){case 0:p=B.a8.kq(a.dG(),null)
 o=t.N
 s=3
-return A.a1(A.aLg(A.f7("***************************/Questions/UpdateQuestion",0,null),p,A.aC(["Content-Type","application/json; charset=UTF-8"],o,o)),$async$CV)
+return A.a1(A.aLg(A.f7("https://quesusapi.azurewebsites.net/api/Questions/UpdateQuestion",0,null),p,A.aC(["Content-Type","application/json; charset=UTF-8"],o,o)),$async$CV)
 case 3:if(c.b===200){q=!0
 s=1
 break}else{q=!1
@@ -93769,7 +93769,7 @@ var $async$AT=A.T(function(b,c){if(b===1)return A.P(c,r)
 while(true)switch(s){case 0:p=B.a8.kq(a.dG(),null)
 o=t.N
 s=3
-return A.a1(A.aLv(A.f7("***************************/Questions/DeleteQuestion",0,null),p,A.aC(["Content-Type","application/json; charset=UTF-8"],o,o)),$async$AT)
+return A.a1(A.aLv(A.f7("https://quesusapi.azurewebsites.net/api/Questions/DeleteQuestion",0,null),p,A.aC(["Content-Type","application/json; charset=UTF-8"],o,o)),$async$AT)
 case 3:if(c.b===200){q=!0
 s=1
 break}else{q=!1
@@ -93779,7 +93779,7 @@ return A.R($async$AT,r)},
 tz(a,b,c){return this.ZS(a,b,c)},
 ZS(a,b,c){var s=0,r=A.S(t.Xv),q,p,o,n,m,l,k,j,i,h
 var $async$tz=A.T(function(d,e){if(d===1)return A.P(e,r)
-while(true)switch(s){case 0:k=A.f7("***************************/Questions/GetQuestions",0,null)
+while(true)switch(s){case 0:k=A.f7("https://quesusapi.azurewebsites.net/api/Questions/GetQuestions",0,null)
 j=t.N
 i=A.aC(["Content-Type","application/json; charset=UTF-8"],j,j)
 s=3
@@ -93807,7 +93807,7 @@ var $async$CU=A.T(function(b,c){if(b===1)return A.P(c,r)
 while(true)switch(s){case 0:p=B.a8.kq(a.dG(),null)
 o=t.N
 s=3
-return A.a1(A.aLg(A.f7("***************************/Questions/UpdateBank",0,null),p,A.aC(["Content-Type","application/json; charset=UTF-8"],o,o)),$async$CU)
+return A.a1(A.aLg(A.f7("https://quesusapi.azurewebsites.net/api/Questions/UpdateBank",0,null),p,A.aC(["Content-Type","application/json; charset=UTF-8"],o,o)),$async$CU)
 case 3:if(c.b===200){q=!0
 s=1
 break}else{q=!1
@@ -93819,7 +93819,7 @@ ZV(a,b){var s=0,r=A.S(t.d5),q,p,o
 var $async$xq=A.T(function(c,d){if(c===1)return A.P(d,r)
 while(true)switch(s){case 0:p=t.N
 s=3
-return A.a1(A.aT6(A.f7("***************************/Questions/GetReport?userName="+a+"&question="+b,0,null),A.aC(["Content-Type","application/json; charset=UTF-8"],p,p)),$async$xq)
+return A.a1(A.aT6(A.f7("https://quesusapi.azurewebsites.net/api/Questions/GetReport?userName="+a+"&question="+b,0,null),A.aC(["Content-Type","application/json; charset=UTF-8"],p,p)),$async$xq)
 case 3:o=d
 if(o.b===200){q=J.Aa(t.j.a(B.a8.cQ(0,A.v4(A.uX(o.e).c.a.h(0,"charset")).cQ(0,o.w))),new A.a4p(),t._T).f4(0)
 s=1

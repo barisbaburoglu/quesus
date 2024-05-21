@@ -16,9 +16,9 @@ class EncryptionModes {
   static const AESPADDING = "PKCS7";
 }
 
-class ApiQueSus {
-  static const encryptionKey = "**************************";
-  static const encryptionIV = "**************";
+class ApiQueSus {  
+  static const encryptionKey = "QueSus2024?*z7I/enrUy1S/xwH6BR==";
+  static const encryptionIV = "QueSus2024?*sk9@";
 
   encryptData(String text) {
     final key = Key.fromUtf8(encryptionKey);
