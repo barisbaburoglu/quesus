@@ -108,9 +108,9 @@ class _ResultPageState extends State<ResultPage> with TickerProviderStateMixin {
                   Text(
                     percent < 0.4
                         ? "DOĞA KATİLİ"
-                        : (percent > 0.40 && percent < 0.70)
+                        : (percent >= 0.40 && percent < 0.70)
                             ? "DOĞA SEVER"
-                            : "DOĞA KAHRAMANI",
+                            : percent >= 0.70 ? "DOĞA KAHRAMANI" : "",
                     style: GoogleFonts.montserrat(
                       color: percent < 0.4 ? colorRed : colorGreenPrimary,
                       fontSize: 28,
